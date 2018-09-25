@@ -37,7 +37,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="index.php">
+        <a class="navbar-brand js-scroll-trigger" href="index.php" style="color:white">
           <img class="img-fluid" src="../img/logo.png" width=40px alt="">
           &nbsp;Chiko Books 
         </a>
@@ -47,7 +47,7 @@
      <!-- Portfolio Grid -->
     <section id="portfolio">
       <div class="container">
-        <div class="row" style="color:white">
+        <div class="row">
           <div class="col-lg-12 text-center">
             <h2 class="section-heading text-uppercase">Sign In!</h2>
           </div>
@@ -62,9 +62,9 @@
           <input type="password" class="btn text-uppercase js-scroll-trigger" id="pwd" placeholder="Password">
         </div>     
         <!-- Tombol Registrasi -->
-        <button type="submit" class="btn btn-primary text-uppercase js-scroll-trigger">&nbsp;Sign In&nbsp;</button>
+        <button type="submit" class="btn btn-pelanggan text-uppercase js-scroll-trigger">&nbsp;Sign In&nbsp;</button>
         <!-- Link untuk yang belum memiliki akun -->
-        <p style="color:white">
+        <p>
           <br><a href="#">Forgot your password?</a><br>...<br>
           Don't have an account?
           <a href="registrasi.php" class="">Sign Up</a><br>

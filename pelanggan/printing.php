@@ -40,7 +40,7 @@
     <!-- Portfolio Grid -->
     <section id="portfolio">
       <div class="container">
-        <div class="row" style="color:white">
+        <div class="row">
           <div class="col-lg-12 text-center">
             <h2 class="section-heading text-uppercase">Printings</h2>
           </div>
@@ -53,7 +53,7 @@
                 </div>
               </div>
               <div class="portfolio-caption">
-                <h4 style="color:black">Paper</h4>
+                <h4>Paper</h4>
                 <p class="text-muted">lorem lorem</p>
               </div>
             </a>
@@ -65,7 +65,7 @@
                 </div>
               </div>
               <div class="portfolio-caption">
-                <h4 style="color:black">Print</h4>
+                <h4>Print</h4>
                 <p class="text-muted">Identity</p>
               </div>
             </a>
@@ -77,7 +77,7 @@
                 </div>
               </div>
               <div class="portfolio-caption">
-                <h4 style="color:black">Book</h4>
+                <h4>Book</h4>
                 <p class="text-muted">Lorem</p>
               </div>
             </a>
@@ -85,7 +85,7 @@
         </div>
         <div class="row">   
           <!-- Mengatur responsive tabel -->
-          <div style="color:white; width:100%;" class="table-responsive-sm">
+          <div style="width:100%;" class="table-responsive-sm">
             <!-- Tabel semua data buku -->
             <table id="tabelpercetakan" class="table table-sm table-striped">
               <!-- Header dari tabel -->

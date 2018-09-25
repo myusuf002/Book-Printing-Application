@@ -40,13 +40,63 @@
      <!-- Portfolio Grid -->
     <section id="portfolio">
       <div class="container">
-        <div class="row" style="color:white">
+        <div class="row">
           <div class="col-lg-12 text-center">
             <br><br>
             <h2 class="section-heading text-uppercase">Hello!</h2>
             Welcome to Our Studio!
             <br>...
-            <br><br><br><br>
+            <br><br><br>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 col-sm-6 portfolio-item">
+            <a class="portfolio-link" href="book.php">
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                </div>
+              </div>
+              <div class="portfolio-caption">
+                <h4>Books</h4>
+                <p class="text-muted">lorem lorem</p>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-4 col-sm-6 portfolio-item">
+            <a class="portfolio-link" href="payment.php">
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                </div>
+              </div>
+              <div class="portfolio-caption">
+                <h4>Payments</h4>
+                <p class="text-muted">Identity</p>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-4 col-sm-6 portfolio-item">
+            <a class="portfolio-link" href="printing.php">
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                </div>
+              </div>
+              <div class="portfolio-caption">
+                <h4>Printings</h4>
+                <p class="text-muted">Lorem</p>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-4 col-sm-6 portfolio-item">
+            <a class="portfolio-link" href="setting.php">
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                </div>
+              </div>
+              <div class="portfolio-caption">
+                <h4>Settings</h4>
+                <p class="text-muted">Lorem</p>
+              </div>
+            </a>
           </div>
         </div>
       </div>

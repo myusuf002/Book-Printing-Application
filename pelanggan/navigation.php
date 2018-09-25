@@ -11,7 +11,13 @@
 
 <body>
     <div class="container">
-      <span style="font-size:30px;cursor:pointer;color:white;" onclick="openNav()">&#9776; menu</span>
+      <span style="font-size:30px;cursor:pointer; color:white" onclick="openNav()">&#9776; menu</span>
+      <span>
+        <a class="navbar-brand js-scroll-trigger" style="color: white" href="../index.php">
+        <img class="img-fluid" src="../img/logo.png" width=40px alt="">
+        &nbsp;Chiko Books 
+        </a>
+      </span>
       <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="index.php">Home</a>

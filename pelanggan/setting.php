@@ -43,7 +43,7 @@
     <!-- Portfolio Grid -->
     <section id="portfolio">
       <div class="container">
-        <div class="row" style="color:white">
+        <div class="row">
           <div class="col-lg-12 text-center">
             <h2 class="section-heading text-uppercase">Settings</h2>
           </div>
@@ -66,7 +66,7 @@
             <input type="text" class="btn text-uppercase js-scroll-trigger" id="alamat" placeholder="Alamat">
           </div>       
           <!-- Tombol Registrasi -->
-          <button type="submit" class="btn btn-primary text-uppercase js-scroll-trigger">&nbsp;Update&nbsp;</button>
+          <button type="submit" class="btn btn-pelanggan text-uppercase js-scroll-trigger">&nbsp;Update&nbsp;</button>
       </form>
     </section>
     

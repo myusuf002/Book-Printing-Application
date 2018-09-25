@@ -46,7 +46,45 @@
             <h2 class="section-heading text-uppercase">Hello!</h2>
             Welcome to Our Studio!
             <br>...
-            <br><br><br><br>
+            <br><br><br>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 col-sm-6 portfolio-item">
+            <a class="portfolio-link" href="services.php">
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                </div>
+              </div>
+              <div class="portfolio-caption">
+                <h4 style="color:black">Services</h4>
+                <p class="text-muted">lorem lorem</p>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-4 col-sm-6 portfolio-item">
+            <a class="portfolio-link" href="clients.php">
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                </div>
+              </div>
+              <div class="portfolio-caption">
+                <h4 style="color:black">Clients</h4>
+                <p class="text-muted">Identity</p>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-4 col-sm-6 portfolio-item">
+            <a class="portfolio-link" href="setting.php">
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                </div>
+              </div>
+              <div class="portfolio-caption">
+                <h4 style="color:black">Settings</h4>
+                <p class="text-muted">Lorem</p>
+              </div>
+            </a>
           </div>
         </div>
       </div>

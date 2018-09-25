@@ -1,3 +1,23 @@
+h4{
+  color:#fed136;
+}
+a {
+  color: #ffffff;
+}
+
+a:hover {
+  color: black;
+}
+
+.btn-pelanggan{
+  background:#212529; 
+  color: #fed136;
+}
+
+.btn-pelanggan:hover{
+  background:black; 
+}
+
 .sidenav {
     height: 100%;
     width: 0;
@@ -32,13 +52,17 @@
     margin-left: 50px;
 }
 
+.main {
+    transition: margin-left .5s;
+    padding: 16px;
+}
+
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
-
 #portfolio{
-  background-color: #212529;
+  background-color: #fed136;
 }
 
 #portfolio .portfolio-item {
@@ -61,7 +85,7 @@
   -webkit-transition: all ease 0.5s;
   transition: all ease 0.5s;
   opacity: 0;
-  background: rgba(254, 209, 54, 0.9);
+  background: rgba(0, 0, 0, 0.9);
   color:red;
 }
 
@@ -185,7 +209,7 @@
   /* IE 9 */
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
-  background-color: #212529;
+  background-color: #fed136;
 }
 
 .portfolio-modal .close-modal .lr .rl {
@@ -196,5 +220,5 @@
   /* IE 9 */
   -webkit-transform: rotate(90deg);
   transform: rotate(90deg);
-  background-color: #212529;
+  background-color: #fed136;
 }

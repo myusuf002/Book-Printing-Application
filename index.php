@@ -44,7 +44,8 @@
             <div class="intro-text col-md-6">
               <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="pelanggan/">Pelanggan</a>
             </div>       
-         </div>        
+         </div>  
+         <br><br><br>      
       </div>
     </header>
 
