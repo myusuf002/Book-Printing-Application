@@ -4,7 +4,7 @@
     header('Location: login.php');
   }
   include "../config.php";
-  $_SESSION['page'] = 'home';
+  $_SESSION['page'] = 'books';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,6 +30,6 @@
     <?php include "../footer.php"; ?>
 
     <!-- Pemanggilan Javascript  -->
-    <script src="assets/js/index.js"></script>
+    <script src=""></script>
   </body>
 </html>
