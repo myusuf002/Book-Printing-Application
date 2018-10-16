@@ -1,7 +1,7 @@
 <?php
   session_start();
   include "../config.php";
-  $id_pelanggan = $_POST['id_pelanggan'];
+  $id_pelanggan = $_SESSION['login_pelanggan'];
   $nama = $_POST['nama'];
   $no_hp = $_POST['no_hp'];
   $alamat = $_POST['alamat'];

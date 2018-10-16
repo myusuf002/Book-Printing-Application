@@ -40,12 +40,6 @@
           <form action="proses_edit_login_akun.php" method="post">
 
             <div class="form-group row">
-              <div class="col-sm-12">
-                <input type="text" class="form-control" name="id_pelanggan" value="<?php echo $akun['id_pelanggan']; ?>" hidden>
-              </div>
-            </div>
-
-            <div class="form-group row">
               <label class="col-sm-3 col-form-label">Email</label>
               <div class="col-sm-9">
                 <input type="email" class="form-control" name="email" value="<?php echo $akun['email']; ?>" disabled>

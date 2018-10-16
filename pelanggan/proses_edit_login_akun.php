@@ -1,7 +1,7 @@
 <?php
   session_start();
   include "../config.php";
-  $id_pelanggan = $_POST['id_pelanggan'];
+  $id_pelanggan = $_SESSION['login_pelanggan'];
   $old = $_POST['old_password'];
   $new = $_POST['new_password'];
   $renew = $_POST['renew_password'];
