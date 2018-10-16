@@ -9,10 +9,10 @@
   $_SESSION['log_pel'] = $email;
 
   if (mysqli_num_rows($query)==1){
-    $data = mysqli_fetch_array($query);
+    $data = mysqli_fetch_array($query, MYSQLI_ASSOC);
     if ($data['password'] == $password){
       unset($_SESSION['log_pel']);
-      $_SESSION['login_pelanggan'] = $data;
+      $_SESSION['login_pelanggan'] = $data['id_pelanggan'];
       header('Location: index.php');
     }else{
       $_SESSION['popupError'] = "Password Salah";
