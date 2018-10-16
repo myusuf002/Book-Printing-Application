@@ -1,1 +1,3 @@
-*.pdf
+#ignore all file pdf
+pelanggan/uploads/buku/*
+pelanggan/uploads/sampul/*
