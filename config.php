@@ -3,8 +3,7 @@
   if (mysqli_connect_errno()) {
     die("Disconnect. ".mysqli_connect_error());
   }
-  function path($path)
-  {
+  function path($path){
     return 'http://localhost/chikobooks' . $path;
   }
 ?>

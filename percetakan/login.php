@@ -1,4 +1,10 @@
-<?php include "../config.php"; ?>
+<?php
+  include "../config.php";
+  session_start();
+  if (isset($_SESSION['login_percetakan'])){
+    header('Location: index.php');
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,15 +15,20 @@
     <title>Chiko Books - Percetakan</title>
     <?php include "../cdn.php"; ?>
 
-    <link href="../assets/img/logo.png" rel="shortcut icon">
-    <link href="../assets/css/primary.css" rel="stylesheet">
-    <link href="../assets/css/index.css" rel="stylesheet">
-    <link href="../assets/css/footer.css" rel="stylesheet">
+    <link href="<?php echo path("/assets/img/logo.png"); ?>" rel="shortcut icon">
+    <link href="<?php echo path("/assets/css/primary.css"); ?>" rel="stylesheet">
+    <link href="<?php echo path("/assets/css/index.css"); ?>" rel="stylesheet">
+    <link href="<?php echo path("/assets/css/footer.css"); ?>" rel="stylesheet">
     <link href="assets/css/login.css" rel="stylesheet">
   </head>
 
   <body id="page-top">
-
+    <?php
+      include "../popup.php";
+      if (isset($_SESSION['log_per'])){
+        $av = $_SESSION['log_per'];
+      }
+    ?>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
       <div class="container">
@@ -38,19 +49,18 @@
         </div>
       </div>
       <!-- Login -->
-      <form action="#" class="col-12 text-center">
+      <form action="proses_login.php" class="col-12 text-center" method="post">
         <div class="form-group">
-          <input type="email" class="btn text-uppercase js-scroll-trigger" id="email" placeholder="Email">
+          <input type="email" class="btn js-scroll-trigger" id="email" placeholder="Email" name="email" value="<?php if(isset($av)){echo $av;} ?>" required>
         </div>
         <div class="form-group">
-          <input type="password" class="btn text-uppercase js-scroll-trigger" id="pwd" placeholder="Password">
+          <input type="password" class="btn js-scroll-trigger" id="pwd" placeholder="Password" name="password" required>
         </div>
         <!-- Tombol Registrasi -->
         <button type="submit" class="btn btn-pelanggan text-uppercase js-scroll-trigger">&nbsp;Sign In&nbsp;</button>
         <!-- Link untuk yang belum memiliki akun -->
         <p>
-          <br><a href="#">Forgot your password?</a><br>...<br>
-          Don't have an account?
+          <br>Don't have an account?
           <a href="registrasi.php" class="">Sign Up</a><br>
         </p>
       </form>
@@ -59,7 +69,7 @@
     <?php include "../footer.php"; ?>
 
     <!-- Pemanggilan Javascript  -->
-    <script src="../assets/js/navbar.js"></script>
+    <script src="<?php echo path("/assets/js/navbar.js"); ?>"></script>
 
   </body>
 </html>

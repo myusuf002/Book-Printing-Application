@@ -1,3 +1,11 @@
+<?php
+  session_start();
+  if (empty($_SESSION['login_percetakan'])){
+    header('Location: login.php');
+  }
+  include "../config.php";
+  $_SESSION['page_r'] = 'home';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,11 +16,10 @@
     <title>Chiko Books - Percetakan</title>
     <?php include "../cdn.php"; ?>
 
-		<link href="../assets/img/logo.png" rel="shortcut icon">
-    <link href="../assets/css/primary.css" rel="stylesheet">
-    <link href="../assets/css/footer.css" rel="stylesheet">
+    <link href="<?php echo path("/assets/img/logo.png"); ?>" rel="shortcut icon">
+    <link href="<?php echo path("/assets/css/primary.css"); ?>" rel="stylesheet">
+    <link href="<?php echo path("/assets/css/footer.css"); ?>" rel="stylesheet">
     <link href="assets/css/navbar.css" rel="stylesheet">
-    <link href="assets/css/index.css" rel="stylesheet">
   </head>
 
   <body>
@@ -22,6 +29,6 @@
     <?php include "../footer.php"; ?>
 
     <!-- Pemanggilan Javascript  -->
-    <script src="assets/js/index.js"></script>
+    <script src=""></script>
   </body>
 </html>
