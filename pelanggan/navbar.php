@@ -15,11 +15,11 @@
       <li class="nav-item <?php if($_SESSION['page']=='books'){echo 'active';} ?>">
         <a class="nav-link" href="books.php">Books</a>
       </li>
-      <li class="nav-item <?php if($_SESSION['page']=='payments'){echo 'active';} ?>">
-        <a class="nav-link" href="payments.php">Payments</a>
-      </li>
       <li class="nav-item <?php if($_SESSION['page']=='printings'){echo 'active';} ?>">
         <a class="nav-link" href="printings.php">Printings</a>
+      </li>
+      <li class="nav-item <?php if($_SESSION['page']=='payments'){echo 'active';} ?>">
+        <a class="nav-link" href="payments.php">Payments</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
@@ -37,17 +37,4 @@
 
 <br><br><br><br><br>
 
-<?php
-  if ( isset($_SESSION['popupSuccess']) ){
-    echo '<script type="text/javascript">';
-    echo '$(document).ready(function() { popupSuccess("' . $_SESSION['popupSuccess'] . '"); });';
-    echo '</script>';
-    unset($_SESSION['popupSuccess']);
-  }
-  if ( isset($_SESSION['popupError']) ){
-    echo '<script type="text/javascript">';
-    echo '$(document).ready(function() { popupError("' . $_SESSION['popupError'] . '"); });';
-    echo '</script>';
-    unset($_SESSION['popupError']);
-  }
-?>
+<?php include "../popup.php"; ?>

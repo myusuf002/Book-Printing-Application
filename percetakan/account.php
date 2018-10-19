@@ -1,10 +1,10 @@
 <?php
   session_start();
-  if (empty($_SESSION['login_pelanggan'])){
+  if (empty($_SESSION['login_percetakan'])){
     header('Location: login.php');
   }
   include "../config.php";
-  $_SESSION['page'] = 'account';
+  $_SESSION['page_r'] = 'account';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,7 +13,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Chiko Books - Pelanggan</title>
+    <title>Chiko Books - Percetakan</title>
     <?php include "../cdn.php"; ?>
 
     <link href="<?php echo path("/assets/img/logo.png"); ?>" rel="shortcut icon">
@@ -102,20 +102,6 @@
             </div>
             <div class="col text-left">
               <?php echo  $akun['kode_pos'];?>
-            </div>
-          </div>
-          <hr>
-
-          <div class="row">
-            <div class="col-3 text-right font-weight-bold">
-              Jenis Kelamin
-            </div>
-            <div class="col text-left">
-              <?php if ($akun['jk'] == 'L'): ?>
-                Laki-Laki
-              <?php else: ?>
-                Perempuan
-              <?php endif; ?>
             </div>
           </div>
           <hr>

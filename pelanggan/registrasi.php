@@ -1,4 +1,5 @@
 <?php
+    include "../config.php";
     session_start();
     if (isset($_SESSION['login_pelanggan'])){
       header('Location: index.php');
@@ -14,27 +15,16 @@
     <title>Chiko Books - Pelanggan</title>
     <?php include "../cdn.php"; ?>
 
-    <link href="../assets/img/logo.png" rel="shortcut icon">
-    <link href="../assets/css/primary.css" rel="stylesheet">
-    <link href="../assets/css/index.css" rel="stylesheet">
-    <link href="../assets/css/footer.css" rel="stylesheet">
+    <link href="<?php echo path("/assets/img/logo.png"); ?>" rel="shortcut icon">
+    <link href="<?php echo path("/assets/css/primary.css"); ?>" rel="stylesheet">
+    <link href="<?php echo path("/assets/css/index.css"); ?>" rel="stylesheet">
+    <link href="<?php echo path("/assets/css/footer.css"); ?>" rel="stylesheet">
     <link href="assets/css/login.css" rel="stylesheet">
   </head>
 
   <body id="page-top">
     <?php
-      if ( isset($_SESSION['popupSuccess']) ){
-        echo '<script type="text/javascript">';
-        echo '$(document).ready(function() { popupSuccess("' . $_SESSION['popupSuccess'] . '"); });';
-        echo '</script>';
-        unset($_SESSION['popupSuccess']);
-      }
-      if ( isset($_SESSION['popupError']) ){
-        echo '<script type="text/javascript">';
-        echo '$(document).ready(function() { popupError("' . $_SESSION['popupError'] . '"); });';
-        echo '</script>';
-        unset($_SESSION['popupError']);
-      }
+      include "../popup.php";
       if (isset($_SESSION['reg_pel'])){
         $av = $_SESSION['reg_pel'];
       }
@@ -42,14 +32,14 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="../index.php">
-          <img class="img-fluid" src="../assets/img/logo.png" width=40px alt="">
+        <a class="navbar-brand js-scroll-trigger" href="<?php echo path("/"); ?>">
+          <img class="img-fluid" src="<?php echo path("/assets/img/logo.png"); ?>" width=40px alt="">
           &nbsp;Chiko Books
         </a>
       </div>
     </nav>
 
-     <!-- Portfolio Grid -->
+    <!-- Portfolio Grid -->
     <section id="portfolio">
       <div class="container">
         <div class="row">
@@ -120,7 +110,7 @@
     <?php include "../footer.php"; ?>
 
     <!-- Pemanggilan Javascript  -->
-    <script src="../assets/js/navbar.js"></script>
+    <script src="<?php echo path("/assets/js/navbar.js"); ?>"></script>
 
   </body>
 </html>

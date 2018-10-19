@@ -17,7 +17,7 @@
     $_SESSION['popupSuccess'] = "Data buku berhasil diubah.";
   }
   else{
-    echo "Data gagal diinput";
+    echo "Data gagal diedit";
   }
 
   // Get data buku

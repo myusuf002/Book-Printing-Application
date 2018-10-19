@@ -15,27 +15,16 @@
     <title>Chiko Books - Pelanggan</title>
     <?php include "../cdn.php"; ?>
 
-    <link href="../assets/img/logo.png" rel="shortcut icon">
-    <link href="../assets/css/primary.css" rel="stylesheet">
-    <link href="../assets/css/index.css" rel="stylesheet">
-    <link href="../assets/css/footer.css" rel="stylesheet">
+    <link href="<?php echo path("/assets/img/logo.png"); ?>" rel="shortcut icon">
+    <link href="<?php echo path("/assets/css/primary.css"); ?>" rel="stylesheet">
+    <link href="<?php echo path("/assets/css/index.css"); ?>" rel="stylesheet">
+    <link href="<?php echo path("/assets/css/footer.css"); ?>" rel="stylesheet">
     <link href="assets/css/login.css" rel="stylesheet">
   </head>
 
   <body id="page-top">
     <?php
-      if ( isset($_SESSION['popupSuccess']) ){
-        echo '<script type="text/javascript">';
-        echo '$(document).ready(function() { popupSuccess("' . $_SESSION['popupSuccess'] . '"); });';
-        echo '</script>';
-        unset($_SESSION['popupSuccess']);
-      }
-      if ( isset($_SESSION['popupError']) ){
-        echo '<script type="text/javascript">';
-        echo '$(document).ready(function() { popupError("' . $_SESSION['popupError'] . '"); });';
-        echo '</script>';
-        unset($_SESSION['popupError']);
-      }
+      include "../popup.php";
       if (isset($_SESSION['log_pel'])){
         $av = $_SESSION['log_pel'];
       }
@@ -80,7 +69,7 @@
     <?php include "../footer.php"; ?>
 
     <!-- Pemanggilan Javascript  -->
-    <script src="../assets/js/navbar.js"></script>
+    <script src="<?php echo path("/assets/js/navbar.js"); ?>"></script>
 
   </body>
 </html>
