@@ -38,6 +38,28 @@
 
           <div class="row">
             <div class="col-auto">
+              <h6 class="font-weight-bold">Foto Profil</h6>
+            </div>
+            <div class="col text-right">
+              <a href="#" data-toggle="modal" data-target="#modal-profil">Ubah</a>
+              <?php include "account_profil.php"; ?>
+            </div>
+          </div>
+          <hr>
+
+          <div class="row">
+            <div class="col-12 text-center">
+              <?php if ($akun['file_profil']==NULL): ?>
+                <img src="assets/img/default.png" alt="foto default" class="img-fluid img-thumbnail" style="width:150px;">
+              <?php else: ?>
+                <img src="uploads/profil/<?php echo $akun['file_profil']; ?>" alt="foto default" class="img-fluid img-thumbnail" style="width:150px;">
+              <?php endif; ?>
+            </div>
+          </div>
+          <hr>
+
+          <div class="row">
+            <div class="col-auto">
               <h6 class="font-weight-bold">Informasi Umum</h6>
             </div>
             <div class="col text-right">

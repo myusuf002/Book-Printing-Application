@@ -13,7 +13,7 @@
         <a class="nav-link" href="index.php">Home</a>
       </li>
       <li class="nav-item <?php if($_SESSION['page']=='books'){echo 'active';} ?>">
-        <a class="nav-link" href="books.php">Books</a>
+        <a class="nav-link" href="books.php">My Books</a>
       </li>
       <li class="nav-item <?php if($_SESSION['page']=='printings'){echo 'active';} ?>">
         <a class="nav-link" href="printings.php">Printings</a>
