@@ -1,5 +1,6 @@
 <footer>
   <div class="container">
+    <hr>
     <div class="row">
       <div class="col-md-4">
         <span class="copyright">Copyright &copy; Chiko Books 2018</span>

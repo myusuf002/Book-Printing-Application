@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Oct 16, 2018 at 03:28 PM
+-- Generation Time: Nov 03, 2018 at 02:52 AM
 -- Server version: 5.7.21
 -- PHP Version: 5.6.35
 
@@ -33,9 +33,16 @@ CREATE TABLE IF NOT EXISTS `admin` (
   `id_admin` int(11) NOT NULL AUTO_INCREMENT,
   `email` varchar(40) NOT NULL,
   `password` varchar(40) NOT NULL,
-  `role` varchar(15) NOT NULL,
+  `role` enum('admin','superadmin') NOT NULL,
   PRIMARY KEY (`id_admin`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`id_admin`, `email`, `password`, `role`) VALUES
+(1, 'fikriaksan17@gmail.com', 'fikriaksan', 'superadmin');
 
 -- --------------------------------------------------------
 
@@ -54,14 +61,17 @@ CREATE TABLE IF NOT EXISTS `buku` (
   `file_sampul` text,
   PRIMARY KEY (`id_buku`),
   KEY `id_pelanggan` (`id_pelanggan`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `buku`
 --
 
 INSERT INTO `buku` (`id_buku`, `id_pelanggan`, `judul`, `sinopsis`, `jum_hal`, `file_buku`, `file_sampul`) VALUES
-(14, 9, 'asd', 'asd', 123, '9_buku_short_fuzzy_logic_tutorial.pdf', '9_sampul_short_fuzzy_logic_tutorial.pdf');
+(14, 9, 'Jentera Lepas', 'Jentera adalah roda pemintal benang. Jika jentera lepas, benang akan beruraian kusut. Demikian juga kehidupan, diputar oleh jentera nasib masing-masing. Tangan-tangan tak terlihat, tak tepermanai raksasanya, mengusutkan jalan kehidupan. Siapa pula yang masih mau menggulung benang kehidupan yang morat-marit? Siapa pun mungkin saja hidupnya menjadi kusut, atau malahan ikut mengusutkan kehidupan orang lain. Namun, dalam kekusutan itu sebenarnya bisa ditemukan harga kehidupan itu sendiri.', 264, '9_buku_short_fuzzy_logic_tutorial.pdf', '9_sampul_short_fuzzy_logic_tutorial.pdf'),
+(15, 9, 'Gadisku di Masa Lalu', 'Jika kehormatan dipandang melekat pada kesucian seorang perawan, nista apa lagi bandingannya yang dapat ditanggungkan seorang suami yang merasa tertipu pada malam pengantinnya? Harga diri yang berasal dari kekayaan hanyalah semu. Orang hanya menghargai kekayaan itu, bukan diri pemiliknya. Tapi kalau seseorang memiliki kesucian diri, kapan pun, di mana pun, orang akan tetap menghargainya.', 152, '9_buku_844949_SK-Kalender-Akademik-Periode-Ganjil-2018-2 (1).pdf', '9_sampul_844949_SK-Kalender-Akademik-Periode-Ganjil-2018-2 (1).pdf'),
+(16, 9, 'Theodore Boone#5: Sang Buronan (The Fugitive)', 'Theo tidak sabar ingin segera pergi ke Washington, DC bersama teman-teman sekolahnya. Menginap empat malam di hotel pencakar langit dan mengunjungi berbagai tempat terkenal di sana pasti bakal seru sekali! Namun semua keseruan itu langsung digantikan pengalaman menegangkan lain: Theo yakin ia melihat Pete Duffy, tersangka pembunuhan yang kini jadi buronan FBI. Tekadnya untuk menegakkan keadilan berhasil menyeret Duffy kembali ke meja hijau, tapi jalan yang harus ditempuh masih sangat panjang. Dan itu berarti, Theo kembali berhadapan dengan bahaya.', 280, '9_buku_Laporan Tugas 2 Fuzzy Logic.pdf', '9_sampul_Laporan Tugas 2 Fuzzy Logic.pdf'),
+(17, 9, 'Love Letters From a Father (Surat Cinta Dari Ayah)', 'Ini mungkin buku pertama di dunia. Yaitu buku yang ditulis oleh seorang ayah sebagai hadiah ulang tahun ke-10 putrinya.\r\n\r\nIsinya berupa 24 cerita yang ditulis dengan mengambil bentuk surat. Tema yang dibahas cukup luas.\r\n\r\nAda cerita fiksi anjing kecil yang menolong burung flamengo. Ada cerita tentang cara menjadi bahagia dengan sederhana dan sangat mudah. Ada pula cerita tentang pentingnya ilmu pengetahuan dalam kehidupan. Ada kisah-kisah tentang musik dan musisi. Ada tentang aneka ragam jenis lukisan dan gaya pelukisnya.\r\n\r\nAda pula kisah-kisah tentang kegigihan manusia dalam menolong sesama. Juga cerita tentang anak miskin yang tak ragu bersekolah meski ia sendiri kekurangan.\r\n\r\nMeskipun kisah-kisah dalam buku ini ditulis oleh seorang ayah untuk gadis kecilnya, kearifan hidup di dalamnya akan berguna pula bagi anak-anak lain dan para orang tua mereka.', 124, '9_buku_PENGUMUMAN UJIAN SUSULAN GANJIL 2018-2019.pdf', '9_sampul_PENGUMUMAN UJIAN SUSULAN GANJIL 2018-2019.pdf');
 
 -- --------------------------------------------------------
 
@@ -142,7 +152,16 @@ CREATE TABLE IF NOT EXISTS `kertas` (
   `jenis` varchar(30) NOT NULL,
   `harga` double NOT NULL,
   PRIMARY KEY (`id_kertas`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `kertas`
+--
+
+INSERT INTO `kertas` (`id_kertas`, `jenis`, `harga`) VALUES
+(1, 'A4 Karton Manila', 450),
+(3, 'A1 Karton Hard', 3500),
+(4, 'A4 HVS 500 Gram', 150);
 
 -- --------------------------------------------------------
 
@@ -163,14 +182,15 @@ CREATE TABLE IF NOT EXISTS `pelanggan` (
   `no_hp` varchar(20) NOT NULL,
   `jk` enum('L','P') NOT NULL,
   PRIMARY KEY (`id_pelanggan`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `pelanggan`
 --
 
 INSERT INTO `pelanggan` (`id_pelanggan`, `email`, `password`, `nama`, `provinsi`, `kota`, `alamat`, `kode_pos`, `no_hp`, `jk`) VALUES
-(9, 'fikriaksan@hotmail.com', 'fikriaksan', 'Muhammad Fikri', 'Sulawesi Selatan', 'Makassar', 'Jl. Sukabirus No. C5', '14045', '081242282643', 'L');
+(9, 'fikriaksan@hotmail.com', 'fikriaksan', 'Muhammad Fikri Ahsan Mujhar', 'Sulawesi Selatan', 'Makassar', 'Jl. Sukabirus No. C5', '14045', '081242282643', 'L'),
+(10, 'asd@asd', 'asdasdasd', 'asd', 'asdasdasd', 'asdasd', 'asdasdasd', '12312', '1231231231', 'L');
 
 -- --------------------------------------------------------
 
@@ -207,9 +227,20 @@ CREATE TABLE IF NOT EXISTS `percetakan` (
   `kota` varchar(40) NOT NULL,
   `alamat` varchar(50) NOT NULL,
   `kode_pos` varchar(5) NOT NULL,
-  `jum_buku` int(11) DEFAULT NULL,
+  `jum_buku` int(11) DEFAULT '0',
+  `file_profil` text,
   PRIMARY KEY (`id_percetakan`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `percetakan`
+--
+
+INSERT INTO `percetakan` (`id_percetakan`, `nama`, `email`, `password`, `no_hp`, `provinsi`, `kota`, `alamat`, `kode_pos`, `jum_buku`, `file_profil`) VALUES
+(1, 'PT. Agung Buku', 'agung@gmail.com', 'asdasdasd', '081234234343', 'Jawa Barat', 'Bandung', 'Jl. Jendral Sudirman', '10045', 0, '1_profil_twitter.png'),
+(2, 'Ozaimedia', 'ozaimedia@gmail.com', 'asdasdasd', '081222333444', 'Jawa Barat', 'Kabupaten Bandung', 'Jl. Sukabirus Gang Selamet 2 No. C5', '50234', 0, '2_profil_icon.png'),
+(3, 'Insta Group', 'insta@gmail.com', 'asdasdasd', '089122344566', 'Sulawesi Selatan', 'Makassar', 'Kompleks Cluster Graha Inayah Blok A No. 6', '40456', 0, '3_profil_instagram.png'),
+(4, 'Gramedia', 'gramedia@gmail.com', 'asdasdasd', '089988766544', 'Jawa Barat', 'Kabupaten Bandung', 'Jl. Terusan Buah Batu No. 98', '56003', 0, NULL);
 
 --
 -- Constraints for dumped tables

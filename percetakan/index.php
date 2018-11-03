@@ -20,6 +20,7 @@
     <link href="<?php echo path("/assets/css/primary.css"); ?>" rel="stylesheet">
     <link href="<?php echo path("/assets/css/footer.css"); ?>" rel="stylesheet">
     <link href="assets/css/navbar.css" rel="stylesheet">
+    <link href="assets/css/index.css" rel="stylesheet">
   </head>
 
   <body>

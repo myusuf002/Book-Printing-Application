@@ -1,3 +1,7 @@
 #ignore all file pdf
 pelanggan/uploads/buku/*.pdf
 pelanggan/uploads/sampul/*.pdf
+percetakan/uploads/profil/*.png
+percetakan/uploads/profil/*.jpg
+percetakan/uploads/profil/*.jpeg
+percetakan/uploads/profil/*.gif
