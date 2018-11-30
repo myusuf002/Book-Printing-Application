@@ -40,7 +40,6 @@
                     <input type="number" class="form-control" name="jum_hal" required min="1" step="1">
                   </div>
 
-
                   <div class="col-12 text-right">
                     <button type="submit" class="btn btn-dark">Submit</button>
                   </div>

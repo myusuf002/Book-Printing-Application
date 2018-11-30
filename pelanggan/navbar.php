@@ -15,9 +15,6 @@
       <li class="nav-item <?php if($_SESSION['page']=='books'){echo 'active';} ?>">
         <a class="nav-link" href="books.php">My Books</a>
       </li>
-      <li class="nav-item <?php if($_SESSION['page']=='printings'){echo 'active';} ?>">
-        <a class="nav-link" href="printings.php">Printings</a>
-      </li>
       <li class="nav-item <?php if($_SESSION['page']=='payments'){echo 'active';} ?>">
         <a class="nav-link" href="payments.php">Payments</a>
       </li>

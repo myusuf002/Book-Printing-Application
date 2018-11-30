@@ -1,6 +1,6 @@
 <?php
   session_start();
-  if (empty($_SESSION['login_admin'])){
+  if (empty($_SESSION['login_admin']) || $_SESSION['role_admin'] != "superadmin"){
     header('Location: login.php');
   }
   include "../config.php";
@@ -19,7 +19,7 @@
     <link href="../assets/img/logo.png" rel="shortcut icon">
     <link href="../assets/css/primary.css" rel="stylesheet">
     <link href="assets/css/navbar.css" rel="stylesheet">
-    <link href="assets/css/paper.css" rel="stylesheet">
+    <link href="assets/css/admin.css" rel="stylesheet">
   </head>
 
   <body>
@@ -43,46 +43,46 @@
           		</div>
           </div>
 
-          <?php include "paper_create.php"; ?>
+          <?php include "admin_create.php"; ?>
 
           <table id="example" class="table table-striped table-bordered" style="width:100%">
             <thead>
               <tr>
-          			<th>ID Kertas</th>
-                <th>Jenis</th>
-                <th>Harga</th>
+          			<th>ID Admin</th>
+                <th>Email</th>
+                <th>Password</th>
                 <th>Action</th>
               </tr>
             </thead>
           	<tbody>
           		<?php
-                $line = "SELECT * FROM kertas";
+                $line = "SELECT * FROM admin WHERE id_admin<>" . $_SESSION['login_admin'];
                 $query = mysqli_query($conn, $line);
-                while ($kertas = mysqli_fetch_array($query, MYSQLI_ASSOC)):
+                while ($admin = mysqli_fetch_array($query, MYSQLI_ASSOC)):
               ?>
           			<tr>
-          				<td><?php echo $kertas['id_kertas']; ?></td>
-          				<td><?php echo $kertas['jenis']; ?></td>
-          				<td>Rp <?php echo number_format($kertas['harga']); ?></td>
+          				<td><?php echo $admin['id_admin']; ?></td>
+          				<td><?php echo $admin['email']; ?></td>
+          				<td><?php echo $admin['password']; ?></td>
           				<td>
 
-          					<a href="#" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#modal-edit<?php echo $kertas['id_kertas']; ?>">
+          					<a href="#" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#modal-edit<?php echo $admin['id_admin']; ?>">
                       <i class="fa fa-edit"></i>
                     </a>
-                    <a href="#" class="btn btn-sm btn-danger" onclick="del('<?php echo $kertas['id_kertas']; ?>');">
+                    <a href="#" class="btn btn-sm btn-danger" onclick="del('<?php echo $admin['id_admin']; ?>');">
                       <i class="fa fa-trash act"></i>
                     </a>
 
           				</td>
           			</tr>
-              <?php include "paper_edit.php"; ?>
+              <?php include "admin_edit.php"; ?>
               <?php endwhile; ?>
           	</tbody>
           	<tfoot>
               <tr>
-                <th>ID Kertas</th>
-                <th>Jenis</th>
-                <th>Harga</th>
+                <th>ID Admin</th>
+                <th>Email</th>
+                <th>Password</th>
                 <th>Action</th>
               </tr>
             </tfoot>
@@ -94,6 +94,6 @@
     </div>
 
     <!-- Pemanggilan Javascript  -->
-    <script src="assets/js/paper.js"></script>
+    <script src="assets/js/admin.js"></script>
   </body>
 </html>

@@ -16,8 +16,8 @@
   }
   // Check if file already exists
   if (file_exists($target_file)) {
-      $_SESSION['popupError'] = "Sorry, cover file already exists";
-      $uploadOk = 0;
+    $_SESSION['popupError'] = "Sorry, book file already exists";
+    $uploadOk = 0;
   }
   // Check if $uploadOk is set to 0 by an error
   if ($uploadOk == 0) {
@@ -47,8 +47,8 @@
   }
   // Check if file already exists
   if (file_exists($target_file)) {
-      $_SESSION['popupError'] = "Sorry, book file already exists";
-      $uploadOk = 0;
+    $_SESSION['popupError'] = "Sorry, book file already exists";
+    $uploadOk = 0;
   }
   // Check if $uploadOk is set to 0 by an error
   if ($uploadOk == 0) {
@@ -58,7 +58,6 @@
   } else {
       if (move_uploaded_file($_FILES["file_buku"]["tmp_name"], $target_file)) {
           $_SESSION['popupSuccess'] = "Data buku berhasil ditambah.";
-          header('Location: books.php');
       } else {
           $_SESSION['popupError'] = "Sorry, there was an error uploading your file.";
           header('Location: books.php');
@@ -66,25 +65,28 @@
       }
   }
 
-  $judul = $_POST['judul'];
-  $sinopsis = $_POST['sinopsis'];
-  $jum_hal = $_POST['jum_hal'];
+  if ($uploadOk != 0) {
+    $judul = $_POST['judul'];
+    $sinopsis = $_POST['sinopsis'];
+    $jum_hal = $_POST['jum_hal'];
 
-  $line = "INSERT INTO buku (id_pelanggan,judul,sinopsis,jum_hal,file_buku,file_sampul) VALUES (";
-  $line .= "'" . $id_pelanggan . "',";
-  $line .= "'" . $judul . "',";
-  $line .= "'" . $sinopsis . "',";
-  $line .= $jum_hal . ",";
-  $line .= "'" . $file_buku . "',";
-  $line .= "'" . $file_sampul . "'";
-  $line .= ")";
-  $query = mysqli_query($conn, $line);
-  if ($query){
-    $_SESSION['popupSuccess'] = "Data buku berhasil ditambah.";
-    header('Location: books.php');
+    $line = "INSERT INTO buku (id_pelanggan,judul,sinopsis,jum_hal,file_buku,file_sampul) VALUES (";
+    $line .= $id_pelanggan . ", ";
+    $line .= "'" . $judul . "', ";
+    $line .= "'" . $sinopsis . "', ";
+    $line .= $jum_hal . ", ";
+    $line .= "'" . $file_buku . "', ";
+    $line .= "'" . $file_sampul . "'";
+    $line .= ")";
+    $query = mysqli_query($conn, $line);
+    if ($query){
+      $_SESSION['popupSuccess'] = "Data buku berhasil ditambah.";
+      header('Location: books.php');
+    }
+    else{
+      echo "Data gagal diinput";
+    }
   }
-  else{
-    echo "Data gagal diinput";
-  }
+
 
 ?>

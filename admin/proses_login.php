@@ -11,6 +11,7 @@
     if ($data['password'] == $password){
       unset($_SESSION['log_pel']);
       $_SESSION['login_admin'] = $data['id_admin'];
+      $_SESSION['role_admin'] = $data['role'];
       header('Location: index.php');
     }else{
       $_SESSION['popupError'] = "Password Salah";

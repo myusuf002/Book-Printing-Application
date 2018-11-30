@@ -12,6 +12,12 @@
       <li class="nav-item <?php if($_SESSION['page_r']=='home'){echo 'active';} ?>">
         <a class="nav-link" href="index.php">Home</a>
       </li>
+      <li class="nav-item <?php if($_SESSION['page_r']=='order'){echo 'active';} ?>">
+        <a class="nav-link" href="order.php">Order</a>
+      </li>
+      <li class="nav-item <?php if($_SESSION['page_r']=='paper'){echo 'active';} ?>">
+        <a class="nav-link" href="paper.php">Paper</a>
+      </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <ul class="navbar-nav mr-auto">

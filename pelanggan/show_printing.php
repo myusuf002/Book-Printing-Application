@@ -78,11 +78,8 @@
 
               <?php
                 $id_pelanggan = $_SESSION['login_pelanggan'];
-                $line = "SELECT * FROM buku";
-                $line .= " LEFT JOIN detail_dicetak USING(id_buku)";
-                $line .= " WHERE buku.id_pelanggan=" . $id_pelanggan;
+                $line = "SELECT * FROM buku WHERE id_pelanggan=" . $id_pelanggan;
                 $query = mysqli_query($conn, $line);
-
               ?>
 
               <?php while ($b = mysqli_fetch_array($query, MYSQLI_ASSOC)): ?>
