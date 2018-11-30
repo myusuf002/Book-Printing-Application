@@ -1,14 +1,14 @@
 <?php
   session_start();
   include "../config.php";
-  $id_kertas = $_GET['id_kertas'];
+  $id_admin = $_GET['id_admin'];
 
-  $line = "DELETE from kertas WHERE id_kertas=" . $id_kertas;
+  $line = "DELETE from admin WHERE id_admin=" . $id_admin;
   $query = mysqli_query($conn, $line);
   if ($query){
     $_SESSION['popupSuccess'] = "Your data has been deleted.";
-    header('Location: paper.php');
+    header('Location: admin.php');
   }else{
-    echo "Gagal delete kertas";
+    echo "Gagal delete admin";
   }
 ?>

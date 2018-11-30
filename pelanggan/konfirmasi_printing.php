@@ -9,12 +9,12 @@
   $id_pelanggan = $_SESSION['login_pelanggan'];
   $id_percetakan = $_GET['id_percetakan'];
 
-  if (!isset($_POST['id_buku'])) {
+  if (!isset($_POST['id_buku'])):
     $_SESSION['popupError'] = "Pilihan Kosong";
     header('Location: show_printing.php?id_percetakan='.$id_percetakan);
-  }else{
+  else:
     $id_buku = $_POST['id_buku'];
-  }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -56,7 +56,7 @@
           </div>
           <hr>
 
-          <form action="#" method="post">
+          <form action="proses_printing_book.php?id_percetakan=<?php echo $id_percetakan; ?>" method="post">
 
           <?php
 
@@ -76,10 +76,14 @@
               $query = mysqli_query($conn, $line);
               $p = mysqli_fetch_array($query, MYSQLI_ASSOC);
           ?>
+          <input type="number" name="id_buku[]" value="<?php echo $id_buku; ?>" hidden>
 
           <div class="row">
 
-            <div class="col-md-12 h6"><u><?php echo $p['judul']; ?></u></div>
+            <div class="col-md-12 h6">
+              <u><?php echo $p['judul']; ?></u> &nbsp;&nbsp;|&nbsp;&nbsp;
+              <?php echo $p['jum_hal']; ?> Pages
+            </div>
 
             <label class="col-sm-3 col-form-label">Jenis Kertas Sampul</label>
             <div class="col-sm-9">
@@ -105,7 +109,7 @@
 
             <label class="col-sm-3 col-form-label">QTY</label>
             <div class="col-sm-9">
-              <input type="number" class="form-control" name="qty" value="1" required min="1">
+              <input type="number" class="form-control" name="qty<?php echo $p['id_buku']; ?>" value="1" required min="1">
             </div>
 
           </div>
@@ -134,3 +138,4 @@
     <script src=""></script>
   </body>
 </html>
+<?php endif; ?>

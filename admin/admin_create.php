@@ -1,33 +1,32 @@
 <!-- The Modal -->
-<div class="modal fade" id="modal-edit<?php echo $kertas['id_kertas']; ?>">
+<div class="modal fade" id="modal-create">
   <div class="modal-dialog modal-md">
     <div class="modal-content">
 
       <!-- Modal Header -->
       <div class="modal-header">
-        <h4 class="modal-title">Edit Kertas</h4>
+        <h4 class="modal-title">Tambah Admin</h4>
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
 
       <!-- Modal body -->
       <div class="modal-body">
         <!-- Form modal untuk menginputkan data buku -->
-              <form action="proses_edit_paper.php?id_kertas=<?php echo $kertas['id_kertas']; ?>" method="POST">
+              <form action="proses_create_admin.php" method="POST">
                 <div class="row">
 
                   <div class="form-group col-12">
-                    <label for="">Jenis:</label>
-                    <input type="text" class="form-control" name="jenis" value="<?php echo $kertas['jenis']; ?>" required>
+                    <label for="">Email:</label>
+                    <input type="email" class="form-control" name="email" required>
                   </div>
 
                   <div class="form-group col-12">
-                    <label for="">Harga:</label>
-                    <input type="number" class="form-control" name="harga" value="<?php echo $kertas['harga']; ?>" required min="1" step="1">
+                    <label for="">Password:</label>
+                    <input type="password" class="form-control" name="password" required>
                   </div>
 
-
                   <div class="col-12 text-right">
-                    <button type="submit" class="btn btn-warning" style="color: white;">Update</button>
+                    <button type="submit" class="btn btn-dark">Submit</button>
                   </div>
 
                 </div>

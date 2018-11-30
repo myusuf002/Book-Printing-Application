@@ -30,38 +30,42 @@
       <div class="col-10">
         <br>
         <div class="container">
-          <h3>Printing Page</h3>
+          <h3>Log Page</h3>
           <hr>
 
           <table id="example" class="table table-striped table-bordered" style="width:100%">
             <thead>
               <tr>
-                <th>ID Dicetak</th>
-                <th>Percetakan</th>
-                <th>Status</th>
-                <th>Tgl Perubahan</th>
+                <th>ID Diolah</th>
+                <th>ID Pembayaran</th>
+                <th>Admin</th>
+                <th>Tanggal</th>
+                <th>Role</th>
               </tr>
             </thead>
             <tbody>
               <?php
-                $line = "SELECT * FROM dicetak JOIN percetakan using (id_percetakan)";
+                $line = "SELECT * FROM diolah JOIN admin using (id_admin)";
+                $line .= " ORDER BY id_diolah DESC";
                 $query = mysqli_query($conn, $line);
-                while ($dicetak = mysqli_fetch_array($query, MYSQLI_ASSOC)):
+                while ($diolah = mysqli_fetch_array($query, MYSQLI_ASSOC)):
               ?>
                 <tr>
-                  <td><?php echo $dicetak['id_dicetak']; ?></td>
-                  <td><?php echo $dicetak['nama']; ?></td>
-                  <td><?php echo $dicetak['status']; ?></td>
-                  <td><?php echo $dicetak['tgl_perubahan']; ?></td>
+                  <td><?php echo $diolah['id_diolah']; ?></td>
+                  <td><?php echo $diolah['id_pembayaran']; ?></td>
+                  <td><?php echo $diolah['email']; ?></td>
+                  <td><?php echo $diolah['tgl']; ?></td>
+                  <td><?php echo $diolah['role']; ?></td>
                 </tr>
               <?php endwhile; ?>
             </tbody>
             <tfoot>
               <tr>
-                <th>ID Dicetak</th>
-                <th>Percetakan</th>
-                <th>Status</th>
-                <th>Tgl Perubahan</th>
+                <th>ID Diolah</th>
+                <th>ID Pembayaran</th>
+                <th>Admin</th>
+                <th>Tanggal</th>
+                <th>Role</th>
               </tr>
             </tfoot>
           </table>
@@ -72,6 +76,6 @@
     </div>
 
     <!-- Pemanggilan Javascript  -->
-    <script src="assets/js/printing.js"></script>
+    <script src="assets/js/log.js"></script>
   </body>
 </html>

@@ -24,14 +24,14 @@
 
           <div class="col-12 font-weight-bold">File Sampul</div>
           <div class="col-12 line">
-            <a href="uploads/sampul/<?php echo $buku['file_sampul']; ?>">
+            <a href="../pelanggan/uploads/sampul/<?php echo $buku['file_sampul']; ?>">
               <?php echo $buku['file_sampul']; ?>
             </a>
           </div>
 
           <div class="col-12 font-weight-bold">File Isi Buku</div>
           <div class="col-12 line">
-            <a href="uploads/buku/<?php echo $buku['file_buku']; ?>">
+            <a href="../pelanggan/uploads/buku/<?php echo $buku['file_buku']; ?>">
               <?php echo $buku['file_buku']; ?>
             </a>
           </div>

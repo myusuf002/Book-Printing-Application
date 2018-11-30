@@ -39,6 +39,7 @@
       <div class="row">
         <?php
           $line = "SELECT * FROM percetakan";
+          $line .= " ORDER BY jum_buku DESC";
           $query = mysqli_query($conn, $line);
           while ($p = mysqli_fetch_array($query, MYSQLI_ASSOC)):
         ?>
