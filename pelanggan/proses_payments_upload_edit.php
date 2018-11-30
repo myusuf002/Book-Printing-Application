@@ -30,7 +30,6 @@
   // Check if $uploadOk is set to 0 by an error
   if ($uploadOk == 0) {
     header('Location: payments.php');
-    break;
     // if everything is ok, try to upload file
   }else{
     if (move_uploaded_file($_FILES["file_bukti"]["tmp_name"], $target_file)) {
@@ -40,7 +39,7 @@
       $line .= "status='" . $status . "', ";
       $line .= "metode_pembayaran='" . $metode_pembayaran . "', ";
       $line .= "file_bukti='" . $file_bukti . "' ";
-      $line .= "WHERE id_pembayaran=" . $id_pembayaran; 
+      $line .= "WHERE id_pembayaran=" . $id_pembayaran;
       $query = mysqli_query($conn, $line);
 
       if (!$query) echo "Data pembayaran gagal diupdate";
@@ -50,7 +49,6 @@
     } else {
       $_SESSION['popupError'] = "Sorry, there was an error uploading your file.";
       header('Location: payments.php');
-      break;
     }
   }
 
