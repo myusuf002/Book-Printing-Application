@@ -28,7 +28,6 @@
   // Check if $uploadOk is set to 0 by an error
   if ($uploadOk == 0) {
     header('Location: payments.php');
-    break;
     // if everything is ok, try to upload file
   }else{
     if (move_uploaded_file($_FILES["file_bukti"]["tmp_name"], $target_file)) {
@@ -50,7 +49,6 @@
     } else {
       $_SESSION['popupError'] = "Sorry, there was an error uploading your file.";
       header('Location: payments.php');
-      break;
     }
   }
 
