@@ -22,7 +22,6 @@
   // Check if $uploadOk is set to 0 by an error
   if ($uploadOk == 0) {
     header('Location: books.php');
-    break;
   // if everything is ok, try to upload file
   } else {
       if (move_uploaded_file($_FILES["file_sampul"]["tmp_name"], $target_file)) {
@@ -30,7 +29,6 @@
       } else {
           $_SESSION['popupError'] = "Sorry, there was an error uploading your cover file.";
           header('Location: books.php');
-          break;
       }
   }
 
@@ -53,7 +51,6 @@
   // Check if $uploadOk is set to 0 by an error
   if ($uploadOk == 0) {
     header('Location: books.php');
-    break;
   // if everything is ok, try to upload file
   } else {
       if (move_uploaded_file($_FILES["file_buku"]["tmp_name"], $target_file)) {
@@ -61,7 +58,6 @@
       } else {
           $_SESSION['popupError'] = "Sorry, there was an error uploading your file.";
           header('Location: books.php');
-          break;
       }
   }
 
