@@ -234,17 +234,17 @@
             <div class="row tulisan text-secondary">
               <div class="col-12">Status Percetakan:</div>
               <div class="col-12">
-                - <b>Menunggu Konfirmasi Percetakan: </b> Lorem ipsum blabla <br>
-                - <b>Menunggu Pembayaran: </b> Lorem ipsum blabla <br>
-                - <b>Ditolak Percetakan: </b> Lorem ipsum blabla <br>
-                - <b>Dalam Proses Percetakan: </b> Lorem ipsum blabla <br>
-                - <b>Pesanan Telah Selesai: </b> Lorem ipsum blabla <br>
+                - <b>Menunggu Konfirmasi Percetakan: </b> percetakan belum memberi konfirmasi <br>
+                - <b>Menunggu Pembayaran: </b> percetakan menunggu proses pembayaran selesai <br>
+                - <b>Ditolak Percetakan: </b> percetakan menolak permintaan cetak buku <br>
+                - <b>Dalam Proses Percetakan: </b> percetakan sedang mencetak buku <br>
+                - <b>Pesanan Telah Selesai: </b> percetakan telah menyelesaikan proses percetakan <br>
               </div>
               <div class="col-12"><br>Status Pembayaran:</div>
               <div class="col-12">
-                - <b>Menunggu Verifikasi Bukti Pembayaran: </b> Lorem ipsum blabla <br>
-                - <b>Pembayaran Diterima: </b> Lorem ipsum blabla <br>
-                - <b>Pembayaran Ditolak: </b> Lorem ipsum blabla <br>
+                - <b>Menunggu Verifikasi Bukti Pembayaran: </b> admin belum memberi konfirmasi <br>
+                - <b>Pembayaran Diterima: </b> admin menerima pembayaran <br>
+                - <b>Pembayaran Ditolak: </b> admin menolak pembayaran <br>
               </div>
             </div>
 
